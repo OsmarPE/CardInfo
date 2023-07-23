@@ -1,0 +1,200 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+  --first-color: rgb(46, 158, 149);
+  --first-color-light: hsl(175, 30%, 48%);
+  --first-color-lighten: hsl(175, 40%, 62%);
+  --gradient-color: linear-gradient(180deg,
+      hsl(178, 35%, 45%),
+      hsl(178, 55%, 28%));
+  --title-color: #183936;
+  --text-color: hsl(175, 8%, 50%);
+  --white-color: #fff;
+  --body-color: hsl(175, 100%, 99%);
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img,
+picture {
+  display: block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+}
+
+.card__back, .card__more {
+  display: grid;
+  place-content: center;
+}
+
+.card {
+  overflow: hidden;
+  position: relative;
+  max-width: 370px;
+  width: 90%;
+  margin: 0 auto;
+  background-image: var(--gradient-color);
+  border-radius: 10px 10px 180px 180px;
+  box-shadow: 0 0 30px -3px rgba(0, 0, 0, 0.12);
+}
+.card__more {
+  cursor: pointer;
+  position: absolute;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+.card__more i {
+  font-size: 1.8rem;
+  color: var(--first-color);
+  transition: opacity 0.4s ease;
+}
+.card__more:hover i {
+  opacity: 0;
+}
+.card__more:hover ~ .card__front {
+  -webkit-clip-path: circle(110% at 88% 11%);
+          clip-path: circle(110% at 88% 11%);
+}
+.card__more:hover ~ .card__front .item-animation {
+  transform: translateX(0);
+}
+.card__back {
+  text-align: center;
+  color: var(--white-color);
+  height: 350px;
+}
+.card__nickname {
+  margin: 1rem 0 0.2rem;
+}
+.card__perfil {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--first-color-light);
+  margin: 0 auto;
+  padding: 0.7rem;
+}
+.card__perfil--xl {
+  width: 90%;
+  max-width: 9rem;
+}
+.card__perfil--sm {
+  padding: 0.5rem;
+  width: 70%;
+  max-width: 6rem;
+}
+.card__perfil-content {
+  overflow: hidden;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--first-color-lighten);
+}
+.card__nickname {
+  font-size: clamp(1.4rem, 5vw, 1.6rem);
+}
+.card__profession {
+  font-size: 0.875rem;
+}
+.card__image {
+  width: 100%;
+}
+.card__front {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  text-align: center;
+  background-color: var(--white-color);
+  grid-template-rows: repeat(3, max-content);
+  gap: 1rem;
+  transition: all 0.4s ease;
+  -webkit-clip-path: circle(4% at 86% 11%);
+          clip-path: circle(4% at 86% 11%);
+}
+@media screen and (width >= 375px) {
+  .card__front {
+    -webkit-clip-path: circle(4% at 88% 11%);
+            clip-path: circle(4% at 88% 11%);
+  }
+}
+.card__name {
+  color: var(--title-color);
+}
+.card__pro {
+  margin: 0.3rem 0;
+}
+.card__socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card__socials-item {
+  width: 2.5rem;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: var(--first-color-light);
+  padding: 0.3rem;
+}
+.card__socials-content {
+  border-radius: 50%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-image: var(--gradient-color);
+}
+.card__socials-content i {
+  color: var(--body-color);
+  font-size: 1.2rem;
+}
+
+.item-animation:nth-child(1) {
+  transform: translateX(-100px);
+  transition: all 0.5s 0.05s ease;
+}
+
+.item-animation:nth-child(2) {
+  transform: translateX(-100px);
+  transition: all 0.5s 0.1s ease;
+}
+
+.item-animation:nth-child(3) {
+  transform: translateX(-100px);
+  transition: all 0.5s 0.15s ease;
+}/*# sourceMappingURL=styles.css.map */
